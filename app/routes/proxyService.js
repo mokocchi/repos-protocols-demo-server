@@ -95,7 +95,7 @@ const restoreSRUQuery = q => {
 }
 
 router.get("/sru", (req, res) => {
-    SRUClient.get(`bib?${restoreSRUQuery(req.query)}`).then(resp => {
+    SRUclient.get(`bib?${restoreSRUQuery(req.query)}`).then(resp => {
         res.status(resp.status).send(resp.data)
     }).catch(error => {
         if (error.response) {

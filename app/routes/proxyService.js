@@ -64,7 +64,7 @@ const restoreOSQuery = q => {
 }
 
 router.get("/open-search/discover", (req, res) => {
-    client.get(`/open-search/discover?${restoreOSQuery(req.query)}`).then(resp => {
+    OSclient.get(`/open-search/discover?${restoreOSQuery(req.query)}`).then(resp => {
         res.status(resp.status).send(resp.data)
     }).catch(error => {
         if (error.response) {
